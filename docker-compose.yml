@@ -12,20 +12,20 @@ services:
       - PG_HOST=db
       - PG_USERNAME=postgres
       - PG_PASSWORD=password
-      - PG_DB=postgres
+      - PG_DB=crudrestapi
       - PG_PORT=5432
     depends_on:
       - db
 
   db:
     container_name: db
-    image: postgres:alpine
+    image: postgres:latest
     ports:
-      - 5432:5432
+      - 35000:5432
     environment:
       - POSTGRES_USERNAME=postgres
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=postgres
+      - POSTGRES_DB=crudrestapi
     volumes:
       - pgdata:/var/lib/postgresql/data
 
